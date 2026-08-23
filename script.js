@@ -43,6 +43,33 @@ addButtons.forEach(function (button) {
       });
     }
 
-    renderCart();
+    function renderCart() {
+  cartItemsElement.innerHTML = "";
+
+  let total = 0;
+  let itemCount = 0;
+
+  cart.forEach(function (item, index) {
+    const listItem = document.createElement("li");
+    listItem.textContent = item.name + " — " + item.price + " × " + item.quantity;
+
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "حذف";
+    removeButton.addEventListener("click", function () {
+      cart.splice(index, 1);
+      renderCart();
+    });
+
+    listItem.appendChild(removeButton);
+    cartItemsElement.appendChild(listItem);
+
+    total = total + item.price * item.quantity;
+    itemCount = itemCount + item.quantity;
+  });
+
+  cartCountElement.textContent = itemCount;
+  cartTotalElement.textContent = total;
+    }
+    
   });
 });
