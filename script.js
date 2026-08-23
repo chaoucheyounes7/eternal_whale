@@ -58,17 +58,22 @@ addButtons.forEach(function (button) {
 });
 const searchInput = document.getElementById("search-input");
 const productCards = document.querySelectorAll(".product");
+const noResults = document.getElementById("no-results");
 
 searchInput.addEventListener("input", function () {
-  const searchText = searchInput.value.toLowerCase();
+  const searchText = searchInput.value.toLowerCase().trim();
+  let visibleProducts = 0;
 
   productCards.forEach(function (card) {
     const productName = card.querySelector("h3").textContent.toLowerCase();
+    const isVisible = productName.includes(searchText);
 
-    if (productName.includes(searchText)) {
-      card.style.display = "inline-block";
-    } else {
-      card.style.display = "none";
+    card.style.display = isVisible ? "inline-block" : "none";
+
+    if (isVisible) {
+      visibleProducts = visibleProducts + 1;
     }
   });
+
+  noResults.style.display = visibleProducts === 0 ? "block" : "none";
 });
