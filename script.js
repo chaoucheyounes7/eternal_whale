@@ -56,3 +56,19 @@ addButtons.forEach(function (button) {
     renderCart();
   });
 });
+const searchInput = document.getElementById("search-input");
+const productCards = document.querySelectorAll(".product");
+
+searchInput.addEventListener("input", function () {
+  const searchText = searchInput.value.toLowerCase();
+
+  productCards.forEach(function (card) {
+    const productName = card.querySelector("h3").textContent.toLowerCase();
+
+    if (productName.includes(searchText)) {
+      card.style.display = "inline-block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+});
