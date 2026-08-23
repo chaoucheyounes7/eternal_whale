@@ -41,3 +41,50 @@ button:hover {
   border-radius: 8px;
   margin-bottom: 12px;
 }
+#cart {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+#cart-items {
+  padding: 0;
+  list-style-position: inside;
+}
+
+#cart-items li {
+  margin: 12px 0;
+  padding: 10px;
+  background-color: #f4f1ea;
+  border-radius: 8px;
+}
+
+#cart-items button {
+  margin-right: 10px;
+  background-color: #a83232;
+  padding: 7px 12px;
+}
+
+#cart-items button:hover {
+  background-color: #7d2525;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+
+  .product {
+    display: block;
+    width: auto;
+    margin: 16px 0;
+  }
+
+  #cart {
+    margin: 20px 0;
+    padding: 16px;
+  }
+}
