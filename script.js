@@ -145,6 +145,43 @@ contactForm.addEventListener("submit", function (event) {
 
   const orderItems = cart.map(function (item) {
     return item.name + " — الكمية: " + item.quantity + " — السعر: " + item.price;
+  }).join("\n");
+
+  const message =
+    "طلبية جديدة من Eternal Whale\n\n" +
+    "المنتجات:\n" + orderItems + "\n\n" +
+    "الكمية المطلوبة: " + quantity + "\n" +
+    "اللون المختار: " + color + "\n" +
+    "الاسم: " + customerName + "\n" +
+    "رقم الهاتف: " + customerPhone + "\n" +
+    "الولاية: " + customerWilaya + "\n" +
+    "البلدية: " + customerMunicipality;
+
+  const whatsappUrl =
+    "https://wa.me/213798283436?text=" + encodeURIComponent(message);
+
+  window.open(whatsappUrl, "_blank");
+
+  formMessage.textContent = "تم تجهيز الطلبية وإرسالها إلى WhatsApp.";
+  formMessage.style.color = "green";
+});
+
+
+  if (cart.length === 0) {
+    formMessage.textContent = "أضف منتجًا إلى السلة أولًا قبل تأكيد الطلبية.";
+    formMessage.style.color = "red";
+    return;
+  }
+
+  const customerName = document.getElementById("name").value;
+  const customerPhone = document.getElementById("phone").value;
+  const customerWilaya = document.getElementById("wilaya").value;
+  const customerMunicipality = document.getElementById("municipality").value;
+  const quantity = document.getElementById("quantity").value;
+  const color = document.getElementById("color").value;
+
+  const orderItems = cart.map(function (item) {
+    return item.name + " — الكمية: " + item.quantity + " — السعر: " + item.price;
   }).join("%0A");
 
   const message =
