@@ -130,3 +130,48 @@ contactForm.addEventListener("submit", function (event) {
   formMessage.style.color = "green";
   contactForm.reset();
 });
+let galleryImages = [];
+let currentImageIndex = 0;
+
+const galleryModal = document.getElementById("gallery-modal");
+const galleryTitle = document.getElementById("gallery-title");
+const galleryImage = document.getElementById("gallery-image");
+const galleryCounter = document.getElementById("gallery-counter");
+const closeGallery = document.getElementById("close-gallery");
+const previousImage = document.getElementById("previous-image");
+const nextImage = document.getElementById("next-image");
+
+function openGallery(product) {
+  const image = product.image || "https://placehold.co/600x400?text=أضف+صورة";
+
+  galleryImages = [image, image, image, image, image];
+  currentImageIndex = 0;
+  galleryTitle.textContent = product.name;
+  updateGalleryImage();
+  galleryModal.classList.add("show");
+}
+
+function updateGalleryImage() {
+  galleryImage.src = galleryImages[currentImageIndex];
+  galleryCounter.textContent = (currentImageIndex + 1) + " / " + galleryImages.length;
+}
+
+nextImage.addEventListener("click", function () {
+  currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+  updateGalleryImage();
+});
+
+previousImage.addEventListener("click", function () {
+  currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+  updateGalleryImage();
+});
+
+closeGallery.addEventListener("click", function () {
+  galleryModal.classList.remove("show");
+});
+
+galleryModal.addEventListener("click", function (event) {
+  if (event.target === galleryModal) {
+    galleryModal.classList.remove("show");
+  }
+});
