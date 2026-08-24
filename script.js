@@ -51,6 +51,9 @@ function renderProducts(list) {
     card.appendChild(price);
     card.appendChild(button);
     productsContainer.appendChild(card);
+ card.addEventListener("click", function (event) {
+  if (event.target.tagName === "BUTTON") return;
+  openGallery(product);
   });
 }
 
