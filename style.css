@@ -205,3 +205,8 @@ button:hover {
 .gallery-buttons button {
   flex: 1;
 }
+#gallery-counter {
+  direction: ltr;
+  text-align: center;
+  font-weight: bold;
+}
