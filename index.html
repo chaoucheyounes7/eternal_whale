@@ -43,25 +43,29 @@
   <p>السعر: 500</p>
   <button data-product="Portefeuille " data-price="500">أضف إلى السلة</button>
 </div>
-  <section id="contact">
-  <h2>تواصل معنا</h2>
-  <p>أرسل لنا رسالتك وسنرد عليك قريبًا.</p>
+<section id="contact">
+  <h2>تأكيد الطلبية</h2>
+  <p>أدخل معلوماتك لإتمام طلبك.</p>
 
   <form id="contact-form">
-    <label for="name">الاسم:</label>
-    <input type="text" id="name" placeholder="اكتب اسمك" required>
+    <label for="name">الاسم الكامل:</label>
+    <input type="text" id="name" placeholder="اكتب اسمك الكامل" required>
 
-    <label for="email">البريد الإلكتروني:</label>
-    <input type="email" id="email" placeholder="example@email.com" required>
+    <label for="phone">رقم الهاتف:</label>
+    <input type="tel" id="phone" placeholder="مثال: 0550123456" required>
 
-    <label for="message">رسالتك:</label>
-    <textarea id="message" rows="5" placeholder="اكتب رسالتك هنا" required></textarea>
+    <label for="wilaya">الولاية:</label>
+    <input type="text" id="wilaya" placeholder="اكتب الولاية" required>
 
-    <button type="submit">إرسال الرسالة</button>
+    <label for="municipality">البلدية:</label>
+    <input type="text" id="municipality" placeholder="اكتب البلدية" required>
+
+    <button type="submit">تأكيد الطلبية</button>
   </form>
 
   <p id="form-message"></p>
-  </section>
+</section>
+
   
 
 <script src="script.js?v=2"></script
