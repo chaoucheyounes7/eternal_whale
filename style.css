@@ -210,3 +210,13 @@ button:hover {
   text-align: center;
   font-weight: bold;
 }
+/* تكبير صورة المنتج عند الضغط */
+.gallery-image {
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image.zoomed {
+  transform: scale(1.6);
+  cursor: zoom-out;
+}
