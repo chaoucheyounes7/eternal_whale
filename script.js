@@ -77,3 +77,14 @@ searchInput.addEventListener("input", function () {
 
   noResults.style.display = visibleProducts === 0 ? "block" : "none";
 });
+const contactForm = document.getElementById("contact-form");
+const formMessage = document.getElementById("form-message");
+
+contactForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  formMessage.textContent = "تم إرسال رسالتك بنجاح. شكرًا لتواصلك معنا!";
+  formMessage.style.color = "green";
+
+  contactForm.reset();
+});
