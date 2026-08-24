@@ -55,9 +55,12 @@ function renderProducts(list) {
   if (event.target.tagName === "BUTTON") return;
   openGallery(product);
   });
+
+});
 }
 
 renderProducts(products);
+
 
 let cart = [];
 const cartCountElement = document.getElementById("cart-count");
