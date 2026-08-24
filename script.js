@@ -129,10 +129,41 @@ const formMessage = document.getElementById("form-message");
 
 contactForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  formMessage.textContent = "تم تأكيد طلبيتك بنجاح. شكرًا لثقتك بنا!";
+
+  if (cart.length === 0) {
+    formMessage.textContent = "أضف منتجًا إلى السلة أولًا قبل تأكيد الطلبية.";
+    formMessage.style.color = "red";
+    return;
+  }
+
+  const customerName = document.getElementById("name").value;
+  const customerPhone = document.getElementById("phone").value;
+  const customerWilaya = document.getElementById("wilaya").value;
+  const customerMunicipality = document.getElementById("municipality").value;
+  const quantity = document.getElementById("quantity").value;
+  const color = document.getElementById("color").value;
+
+  const orderItems = cart.map(function (item) {
+    return item.name + " — الكمية: " + item.quantity + " — السعر: " + item.price;
+  }).join("%0A");
+
+  const message =
+    "طلبية جديدة من Eternal Whale%0A%0A" +
+    "المنتجات:%0A" + orderItems + "%0A%0A" +
+    "الكمية الإضافية: " + quantity + "%0A" +
+    "اللون المختار: " + color + "%0A" +
+    "الاسم: " + customerName + "%0A" +
+    "رقم الهاتف: " + customerPhone + "%0A" +
+    "الولاية: " + customerWilaya + "%0A" +
+    "البلدية: " + customerMunicipality;
+
+  const whatsappUrl = "https://wa.me/213798283436?text=" + encodeURIComponent(message);
+  window.open(whatsappUrl, "_blank");
+
+  formMessage.textContent = "تم تجهيز الطلبية، وسيتم فتح WhatsApp لإرسالها.";
   formMessage.style.color = "green";
-  contactForm.reset();
 });
+
 let galleryImages = [];
 let currentImageIndex = 0;
 
