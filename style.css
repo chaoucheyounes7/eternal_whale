@@ -389,3 +389,29 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
+/* تذييل المتجر */
+.site-footer {
+  margin-top: 45px;
+  padding: 35px 20px 20px;
+  background-color: var(--navy);
+  color: var(--white);
+  text-align: center;
+  border-top: 5px solid var(--gold);
+}
+
+.site-footer h2 {
+  margin-top: 0;
+  color: var(--gold);
+}
+
+.site-footer p {
+  margin: 8px 0;
+}
+
+.site-footer .copyright {
+  margin-top: 22px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+  opacity: 0.85;
+}
