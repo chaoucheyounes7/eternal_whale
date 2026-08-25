@@ -201,7 +201,7 @@ const nextImage = document.getElementById("next-image");
 function openGallery(product) {
   const image = product.image || "https://placehold.co/600x400?text=أضف+صورة";
 
-  galleryImages = [image, image, image, image, image];
+  galleryImages = product.images || [image, image, image, image, image];
   currentImageIndex = 0;
   galleryTitle.textContent = product.name;
   updateGalleryImage();
