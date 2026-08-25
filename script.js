@@ -113,7 +113,7 @@ productsContainer.addEventListener("click", function (event) {
   } else {
     cart.push({ name: productName, price: productPrice, quantity: 1 });
   }
-
+saveCart();
   renderCart();
 });
 
