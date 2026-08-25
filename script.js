@@ -83,8 +83,10 @@ function renderCart() {
     const removeButton = document.createElement("button");
     removeButton.textContent = "حذف";
     removeButton.addEventListener("click", function () {
-      cart.splice(index, 1);
-      renderCart();
+   cart.splice(index, 1);
+saveCart();
+renderCart();
+
     });
 
     listItem.appendChild(removeButton);
