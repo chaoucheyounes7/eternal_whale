@@ -1,5 +1,17 @@
     const products = [
-  { name: "منتج 1", price: 100, image: "FB_IMG_1777303594552.jpg" },
+{
+  name: "قبعة Balenciaga",
+  price: 100,
+  image: "FB_IMG_1777303599704.jpg",
+  images: [
+    "FB_IMG_1777303599704.jpg",
+    "FB_IMG_1777303596780.jpg",
+    "FB_IMG_1777303591857.jpg",
+    "FB_IMG_1777303589514.jpg",
+    "FB_IMG_1777303586718.jpg"
+  ]
+},
+
   { name: "منتج 2", price: 150, image: "953-1.png" },
   { name: "منتج 3", price: 200, image: "IMG20250128064400.jpg" },
   { name: "منتج 4", price: 250, image: "" },
