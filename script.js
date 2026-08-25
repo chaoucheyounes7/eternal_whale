@@ -66,6 +66,10 @@ let cart = JSON.parse(localStorage.getItem("eternalCart")) || [];
 const cartCountElement = document.getElementById("cart-count");
 const cartItemsElement = document.getElementById("cart-items");
 const cartTotalElement = document.getElementById("cart-total");
+function saveCart() {
+  localStorage.setItem("eternalCart", JSON.stringify(cart));
+}
+
 
 function renderCart() {
   cartItemsElement.innerHTML = "";
