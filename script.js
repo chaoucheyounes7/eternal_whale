@@ -62,7 +62,7 @@ function renderProducts(list) {
 renderProducts(products);
 
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("eternalCart")) || [];
 const cartCountElement = document.getElementById("cart-count");
 const cartItemsElement = document.getElementById("cart-items");
 const cartTotalElement = document.getElementById("cart-total");
