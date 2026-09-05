@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Practice</title>
+</head>
+<body>
+  <h1>قائمة المنتجات التدريبية</h1>
+
+  <input id="search-input" type="text" placeholder="ابحث عن منتج">
+
+  <div id="products-container"></div>
+
+  <p id="message"></p>
+
+  <script src="practice.js"></script>
+</body>
+</html>
