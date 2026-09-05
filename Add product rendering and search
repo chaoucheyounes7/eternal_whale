@@ -1,0 +1,38 @@
+const products = [
+  { name: "قبعة", price: 100 },
+  { name: "حقيبة", price: 200 },
+  { name: "محفظة", price: 300 }
+];
+
+const productsContainer = document.getElementById("products-container");
+const searchInput = document.getElementById("search-input");
+const message = document.getElementById("message");
+
+function renderProducts(list) {
+  productsContainer.innerHTML = "";
+
+  list.forEach((product) => {
+    const card = document.createElement("div");
+    card.innerHTML = `
+      <h2>${product.name}</h2>
+      <p>السعر: ${product.price}</p>
+    `;
+    productsContainer.appendChild(card);
+  });
+
+  message.textContent = list.length === 0
+    ? "لا توجد منتجات مطابقة"
+    : "عدد المنتجات: " + list.length;
+}
+
+renderProducts(products);
+
+searchInput.addEventListener("input", () => {
+  const searchText = searchInput.value.toLowerCase().trim();
+
+  const filteredProducts = products.filter((product) => {
+    return product.name.toLowerCase().includes(searchText);
+  });
+
+  renderProducts(filteredProducts);
+});
